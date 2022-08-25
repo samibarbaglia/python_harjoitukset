@@ -16,11 +16,11 @@ luo = (luodit * luoti_1)
 
 grsumma = (lev + nau + luo)
 kilo = grsumma / 1000
-loput = grsumma - (math.floor(kilo)) * 1000
+loput = grsumma - (math.floor(kilo) * 1000)
 
 # lopputulos
 
-input("\nMassa nykymittoina on \n" + str(math.floor(kilo)) +
+input("\nMassa nykymittoina on " + str(math.floor(kilo)) +
       f" kilogrammaa ja {loput:.2f} grammaa")
 
 # testitesti

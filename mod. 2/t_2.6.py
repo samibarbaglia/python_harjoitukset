@@ -5,7 +5,8 @@ x = random.randint(0, 9)
 y = random.randint(0, 9)
 z = random.randint(0, 9)
 
-print("Kolminumeroinen numerolukon koodi: " + str(x) + str(y) + str(z))
+print(f"Kolminumeroinen numerolukon koodi: {x}" + str(y) + str(z))
+# print(x,y,z)
 
 # nelinumeroinen, syötteet
 a = random.randint(1, 6)
