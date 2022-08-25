@@ -6,5 +6,5 @@ ala = kanta * korkeus
 piiri = (2 * kanta) + (2 * korkeus)
 
 # tulostukset
-print("Suorakulmion pinta-ala = " + str(ala))
-print(f"Suorakulmion piiri = {piiri}")
+print(f"Suorakulmion pinta-ala on {ala:.2f}.")
+print(f"Suorakulmion piiri on {piiri:1.2f}.")
