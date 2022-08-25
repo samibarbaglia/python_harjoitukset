@@ -1,2 +1,2 @@
 nimi = input("Anna nimesi: ")
-input("Terve, " + nimi + "!")
+print("Terve, " + nimi + "!")
