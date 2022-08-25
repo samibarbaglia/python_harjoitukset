@@ -1,5 +1,5 @@
-kanta = float(input("Anna suorakulmion kanta   "))
-korkeus = float(input("Anna suorakulmion korkeus "))
+kanta = float(input("Anna suorakulmion kanta:   "))
+korkeus = float(input("Anna suorakulmion korkeus: "))
 
 # laskutoimitukset
 ala = kanta * korkeus
