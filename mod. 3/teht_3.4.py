@@ -1,12 +1,7 @@
-# Kirjoita ohjelma, joka kysyy vuosiluvun ja ilmoittaa, onko annettu vuosi karkausvuosi.
-# Vuosi on karkausvuosi, jos se on jaollinen neljällä.
-# Sadalla jaolliset vuodet ovat karkausvuosia vain jos ne ovat jaollisia myös neljälläsadalla.
-
-vuosiluku = int(input("Syötä vuosiluku: "))
-
-if vuosiluku % 4 == 0:
-    print("Vuosi on karkausvuosi.")
+vuosi = int(input("Anna vuosi: "))
+if vuosi % 100 == 0 and vuosi % 400 == 0:
+    print(f"{vuosi} on karkausvuosi.")
+elif vuosi % 4 == 0 and vuosi % 100 != 0:
+    print(f"{vuosi} on karkausvuosi.")
 else:
-    print("Vuosi ei ole karkausvuosi.")
-
-
+    print(f"{vuosi} ei ole karkausvuosi.")

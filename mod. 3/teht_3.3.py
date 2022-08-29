@@ -1,12 +1,6 @@
-gender = input("Sukupuolesi? (nainen/mies) ")
-# if not gender != "mies" or "nainen":
-    # print("Tapahtui virhe")
-    # quit()
+gender = input("Sukupuolesi? (N/M) ")
 
-# hg_value = int(input("Hemoglobniinisi (g/l)? "))
-
-if gender == "nainen":
-    # testataan naisen ohjearvoja vastaan
+if gender == "N":
     hg_value = int(input("Hemoglobniinisi (g/l)? "))
     if hg_value < 117:
         print("Hemoglobiiniarvo on alhainen")
@@ -15,8 +9,7 @@ if gender == "nainen":
     else:
         print("Hemoglobiiniarvo on korkea")
 
-elif gender == "mies":
-    # TODO: tee sama miehen arvoilla
+elif gender == "M":
     hg_value = int(input("Hemoglobniinisi (g/l)? "))
     if hg_value < 134:
         print("Hemoglobiiniarvo on alhainen")
@@ -25,6 +18,5 @@ elif gender == "mies":
     else:
         print("Hemoglobiiniarvo on korkea")
 
-elif not gender == "mies" or "nainen":
+elif not gender == "M" or "N":
     print("Virhe")
-    # TODO: tulosta virheilmoitus(?)
