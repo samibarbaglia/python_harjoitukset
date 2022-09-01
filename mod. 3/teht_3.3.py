@@ -1,6 +1,6 @@
 gender = input("Sukupuolesi? (N/M) ")
 
-if gender == "N":
+if gender == "N" or gender == "n":
     hg_value = int(input("Hemoglobniinisi (g/l)? "))
     if hg_value < 117:
         print("Hemoglobiiniarvo on alhainen")
@@ -9,7 +9,7 @@ if gender == "N":
     else:
         print("Hemoglobiiniarvo on korkea")
 
-elif gender == "M":
+elif gender == "M" or gender == "m":
     hg_value = int(input("Hemoglobniinisi (g/l)? "))
     if hg_value < 134:
         print("Hemoglobiiniarvo on alhainen")
