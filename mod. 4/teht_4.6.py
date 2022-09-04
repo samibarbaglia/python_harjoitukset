@@ -13,9 +13,24 @@
 # yksikköympyrän A sisällä: riittää testata, toteuttaako piste epäyhtälön x^2+y^2<1.)
 
 import math
+import random
 
 B = (-1, -1), (1, -1), (1, 1), (-1, 1)
-N = 1000000
 n = math.pi / 4
+i = 0
+Rounds = float(input("Number of rounds: "))
+Sis = Ulkona = int(Piste)
 
-UserPisteet = input("Anna pisteet (x,y): ")
+while i < Rounds:
+    i += 1
+    x = random.randint(-1, 1)
+    y = random.randint(-1, 1)
+    PisteInt = int(Piste)
+    if int(Piste) != (x^2 + y^2 < 1):
+        PisteInt = Sis
+    if int(Piste) == (x^2 + y^2 < 1):
+        PisteInt = Ulkona
+
+    print(f"Ympyrän sisällä on {Sis} ja ulkona {Ulkona}.")
+
+
