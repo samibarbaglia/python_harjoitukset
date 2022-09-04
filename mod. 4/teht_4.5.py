@@ -6,10 +6,10 @@
 
 correct_user = "python"
 correct_password = "rules"
-number0fRounds = 5
+numberOfRounds = 5
 attempts = 0
 
-while attempts < number0fRounds:
+while attempts < numberOfRounds:
     attempts += 1
     user = input("Käyttäjätunnus: ")
     password =input("Salasana: ")
