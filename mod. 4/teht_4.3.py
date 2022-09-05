@@ -10,4 +10,4 @@ while userInput != "":
         maxValue = userInputInt
     userInput = input("Sano luku: ")
 
-print(f"Pienin arvo: {minValue}. suurin arvo: {maxValue}")
+print(f"Pienin arvo: {minValue}. Suurin arvo: {maxValue}")
