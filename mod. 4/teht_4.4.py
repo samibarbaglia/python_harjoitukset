@@ -7,18 +7,12 @@
 import random
 
 arvaus = ""
-numero = random.randint(1,10)
+numero = random.randint(1, 10)
 while arvaus != numero:
-    arvaus = float(input("Arvaa numero 1-10: "))
+    arvaus = int(input("Arvaa numero 1-10: "))
     if arvaus > numero:
         print("Liian suuri arvaus")
     elif arvaus < numero:
         print("Liian pieni arvaus")
     elif arvaus == numero:
-        print("Oikein!")
-
-
-# while tuuma >= 0:
-    #sentti = tuuma * 2.54
-    #print(f'{tuuma} tuumaa on {sentti} senttimetriä.')
-    #tuuma = float(input("Anna tuumat: "))
+        print(f"Oikein! Numero on {numero}.")
