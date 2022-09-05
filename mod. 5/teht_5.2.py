@@ -10,5 +10,5 @@ while readingNumbers:
 numbers.sort(reverse=True)
 # print(numbers)
 print(numbers[:5])
-for number in numbers[:5]:
-    print(number)
+# for number in numbers[:5]:
+    # print(number)

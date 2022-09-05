@@ -5,6 +5,6 @@ for i in range(1, 6):
     cities.append(userCity)
     i =+ 1
 
-print("\nLista kaupungeistasi:")
+print("\nLista kaupungeistasi: ")
 for city_list in cities:
     print(city_list)

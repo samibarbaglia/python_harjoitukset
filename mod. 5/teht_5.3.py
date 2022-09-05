@@ -7,4 +7,4 @@ for i in range(1):
     if userNumber % (1 or 2 or 3 or 5 or 7) != 0:
         print("joo.")
 
-ÄÄÄÄÄÄÄÄÄÄ
+ÄÄÄÄÄÄÄÄÄ
