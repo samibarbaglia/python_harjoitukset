@@ -1,10 +1,8 @@
-userNumber = int(input("Testattava kokonaisnumero: "))
-numbers = [1, 2, 3, 5, 7]
+i = int(input("Anna kokonaisluku: "))
 
-for i in range(1):
-    if userNumber in range() == 0 and not numbers:
-        print("ei")
-    if userNumber % (1 or 2 or 3 or 5 or 7) != 0:
-        print("joo.")
-
-ÄÄÄÄÄÄÄÄÄ
+for n in range(2, i):
+    if i % n == 0:
+        print(f"{i} ei ole alkuluku.")
+        break
+else:
+    print(f"{i} on alkuluku.")
