@@ -3,11 +3,12 @@
 # varten pääohjelma, jossa luot listan, kutsut funktiota ja tulostat sen
 # palauttaman summan.
 
-def summaa(lista):
+def summaa(list):
     summa = 0
-    for luku in lista:
+    for luku in list:
         summa = summa + luku
     return summa
+
 
 lista = [2, 4, 9, -4, 6, 1000]
 print(summaa(lista))

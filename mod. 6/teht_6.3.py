@@ -4,16 +4,16 @@
 # litroiksi. Muunnos on tehtävä aliohjelmaa hyödyntäen. Muuntamista jatketaan
 # siihen saakka, kunnes käyttäjä syöttää negatiivisen gallonamäärän.
 
-def turnToLitre(gallon):
+def convert(gallon):
     litre = gallon * 3.78541178
     return litre
 
-gallon = float(input("Anna nestegallonamäärä: "))
 
+gallon = float(input("Anna nestegallonat: "))
 while gallon > -1:
-    litre = turnToLitre(gallon)
+    litre = convert(gallon)
     print(f"{gallon} nestegallonia = {litre:.2f} litraa.")
-    break
+    gallon = float(input("\nAnna nestegallonat: "))
 
 
 

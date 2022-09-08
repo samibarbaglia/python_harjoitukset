@@ -5,10 +5,11 @@
 # listan, kutsut funktiota ja tulostat sen jälkeen sekä alkuperäisen että karsitun listan.
 
 def poista(lista2):
-    for luku in lista:
-        if luku % 2 == 0:
-            lista2.append(luku)
+    for n in lista:
+        if n % 2 == 0:
+            lista2.append(n)
     return lista2
+
 
 lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 45, 24, 67, 75, 522, 54, 8501, 1000, 80, 57, 37, 39, 31, 33, 28]
 lista2 = []
