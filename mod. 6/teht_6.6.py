@@ -1,29 +1,23 @@
-# Kirjoita funktio, joka saa parametreinaan pyöreän pizzan halkaisijan
-# senttimetreinä sekä pizzan hinnan euroina. Funktio laskee ja palauttaa
-# pizzan yksikköhinnan euroina per neliömetri. Pääohjelma kysyy käyttäjältä
-# kahden pizzan halkaisijat ja hinnat sekä ilmoittaa, kumpi pizza antaa
-# paremman vastineen rahalle (eli kummalla on alhaisempi yksikköhinta).
-# Yksikköhintojen laskennassa on hyödynnettävä kirjoitettua funktiota.
 import math
-def laskehinta(pizzaHinnat):
-        nm = 4
-        for i in pizzaHalkaisijat:
-            hinta = math.pi * (i/2) * (i/2)
-            for luku in pizzaHinnat:
-                luku = hinta / nm
-        return pizzaHinnat
+def laske(halkaisija_cm, hinta):
+    r = float(halkaisija_cm / 2)
+    pinta_ala_m = (math.pi * r * r) / 1000
+    arvo = hinta / pinta_ala_m
+    return arvo
 
-pizzaHalkaisijat = []
-pizzaHinnat = []
 
-for i in range(2):
-    halkaisija = int(input(f"Anna {i + 1}. pizzan halkaisija (cm): "))
-    pizzaHalkaisijat.append(halkaisija)
+pizzat = []
+lkm = int(input("Montako pizzaa? "))
+for i in range(lkm):
+    halkaisija = float(input(f"Anna {i + 1}. pizzan halkaisija (cm): "))
+    hinta = float(input("Anna hinta (euroina): "))
+    pizzat.append(laske(halkaisija, hinta))
 
-for i in range(2):
-    hinta = input(f"Anna {i+1}. pizzan hinta: ")
-    pizzaHinnat.append(hinta)
+# print(pizzat)
 
-print(laskehinta(pizzaHinnat))
+arvokkaimmanId = 0
+for x in range(len(pizzat)):
+    if pizzat[arvokkaimmanId] > pizzat[x]:
+        arvokkaimmanId = x
 
-ÄÄÄÄÄÄÄ
+print(f"Paras hinta-kokosuhde on {arvokkaimmanId + 1}. pizzassa.")
