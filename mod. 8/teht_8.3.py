@@ -3,10 +3,7 @@
 # perustuu tietokannasta haettuihin koordinaatteihin. Laske etäisyys geopy-kirjaston
 # avulla: https://geopy.readthedocs.io/en/stable/. Asenna kirjasto valitsemalla
 # View / Tool Windows / Python Packages. Kirjoita hakukenttään geopy ja vie asennus loppuun.
-
-#input("Anna 1. lentokentän ICAO-koodi: ")
-#input("Anna 2. lentokentän ICAO-koodi: ")
-
+from geopy.distance import geodesic
 import mysql.connector
 
 yhteys = mysql.connector.connect(
@@ -18,17 +15,21 @@ yhteys = mysql.connector.connect(
     autocommit=True
     )
 
-def Haku():
-        UserIcao = input(f"Anna lentokentän ICAO-koodi: ")
-        sql = "SELECT name FROM airport WHERE ident ='" + UserIcao + "'"
+def haku(lentokenttä):
+        sql = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident ='" + lentokenttä + "'"
         kursori = yhteys.cursor()
         kursori.execute(sql)
         tulos = kursori.fetchall()
         return tulos
 
-ICAO = Haku()
-ICAO2 = Haku()
+
+ICAO = input(f"Anna lentokentän ICAO-koodi: ")
+haku(ICAO)
+
+ICAO2 = input(f"Anna lentokentän ICAO-koodi: ")
+haku(ICAO2)
 
 print(f"{ICAO}, {ICAO2}")
 
-# En ymmärtänyt miten käyttää geopyä
+print(f"{geodesic(haku(ICAO), haku(ICAO2)).km:0.2f} kilometriä välimatkaa.")
+
