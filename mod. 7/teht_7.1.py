@@ -6,3 +6,5 @@ seasons = {3:"kevät", 4:"kevät", 5:"kevät",
 kk = int(input("Anna kuukausi (1-12): "))
 if kk in seasons:
     print(f"{kk}. kuukausi on vuodenaikaa {seasons[kk]}.")
+else:
+    print("Virheellinen numero!")
