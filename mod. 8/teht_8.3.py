@@ -1,9 +1,6 @@
-# Kirjoita ohjelma, joka kysyy käyttäjältä kahden lentokentän ICAO-koodit.
-# Ohjelma ilmoittaa lentokenttien välisen etäisyyden kilometreinä. Laskenta
-# perustuu tietokannasta haettuihin koordinaatteihin. Laske etäisyys geopy-kirjaston
-# avulla: https://geopy.readthedocs.io/en/stable/. Asenna kirjasto valitsemalla
-# View / Tool Windows / Python Packages. Kirjoita hakukenttään geopy ja vie asennus loppuun.
-from geopy.distance import geodesic
+
+from geopy import distance
+
 import mysql.connector
 
 yhteys = mysql.connector.connect(
@@ -16,7 +13,7 @@ yhteys = mysql.connector.connect(
     )
 
 def haku(lentokenttä):
-        sql = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident ='" + lentokenttä + "'"
+        sql = "SELECT latitude_deg, longitude_deg FROM airport WHERE gps_code ='" + lentokenttä + "'"
         kursori = yhteys.cursor()
         kursori.execute(sql)
         tulos = kursori.fetchall()
@@ -24,12 +21,11 @@ def haku(lentokenttä):
 
 
 ICAO = input(f"Anna lentokentän ICAO-koodi: ")
-haku(ICAO)
-
 ICAO2 = input(f"Anna lentokentän ICAO-koodi: ")
-haku(ICAO2)
+loc1 = haku(ICAO)
+loc2 = haku(ICAO2)
 
-print(f"{ICAO}, {ICAO2}")
+gap = distance.distance(loc1, loc2).km
 
-print(f"{geodesic(haku(ICAO), haku(ICAO2)).km:0.2f} kilometriä välimatkaa.")
+print(f"{gap:0.2f} kilometriä välimatkaa.")
 

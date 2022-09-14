@@ -4,10 +4,10 @@
 # kertaa. Lopuksi ohjelma luettelee syötetyt nimet yksi kerrallaan
 # allekkain mielivaltaisessa järjestyksessä. Käytä joukkotietorakennetta nimien tallentamiseen.
 
-nimet = {"Milla"}
-nimet.remove("Milla")
+nimet = set()
+
 while True:
-    UserInput = input("Anna nimi: ")
+    UserInput = input("\nAnna nimi: ")
     if UserInput == "":
         break
     if UserInput in nimet:
