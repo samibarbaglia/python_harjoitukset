@@ -51,7 +51,6 @@ class Building:
         the_lift.move_to_floor(floor)
 
 
-
     def fire_alarm(self):
         for i in range(len(self.lifts)):
             building_1.move_lift(i+1, 0)
