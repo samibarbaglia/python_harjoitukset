@@ -27,16 +27,15 @@ class Lift:
         print(f"Hissi liikkuu alas kerrokseen {self.current}.")
 
     def move_to_floor(self, kerros):
-        self.target = kerros
 
-        while self.current != self.target:
+        while self.current != kerros:
             if self.current > kerros:
                 Lift.move_down(self)
 
             elif self.current < kerros:
                 Lift.move_up(self)
 
-            elif self.current == self.target:
+            elif self.current == self.kerros:
                 print(f"Hissi on jo kerroksessa {self.current}.")
 
     def print_info(self):
