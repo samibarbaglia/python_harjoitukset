@@ -30,7 +30,6 @@ class Car:
 
 
 someCar = Car('ABC-123', 142)
-# otherCar = Car('LOL-420', 69)
 
 someCar.accelerate(30)
 someCar.accelerate(70)
@@ -39,5 +38,4 @@ someCar.print_info()
 someCar.accelerate(-200)
 someCar.print_info()
 someCar.accelerate(30)
-
 someCar.print_info()

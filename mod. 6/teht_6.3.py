@@ -12,7 +12,7 @@ def convert(gallon):
 gallon = float(input("Anna nestegallonat: "))
 while gallon > -1:
     litre = convert(gallon)
-    print(f"{gallon} nestegallonia = {litre:.2f} litraa.")
+    print(f"{gallon} nestegallonaa = {litre:.2f} litraa.")
     gallon = float(input("\nAnna nestegallonat: "))
 
 
