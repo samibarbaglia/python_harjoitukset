@@ -1,4 +1,4 @@
-#Tehtävät 2 - 3
+#Tehtävät 2 ja 3
 
 import random
 
