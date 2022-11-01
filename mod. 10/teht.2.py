@@ -50,9 +50,11 @@ class Building:
         the_lift = self.lifts[index-1]
         the_lift.move_to_floor(floor)
 
+
+
     def fire_alarm(self):
         for i in range(len(self.lifts)):
-            build_a.move_lift(i+1, 0)
+            building_1.move_lift(i+1, 0)
 
 
 Elevator = Lift(1, 10)
@@ -63,8 +65,12 @@ Elevator.print_info()
 Elevator.move_to_floor(1)
 Elevator.print_info()
 
-build_a = Building(1, 7, 2)
-build_b = Building(0, 4, 1)
+building_1 = Building(1, 7, 2)
+building_2 = Building(0, 4, 1)
 
-build_a.move_lift(2, 7)
-build_a.fire_alarm()
+building_1.move_lift(2, 7)
+print("")
+building_1.move_lift(1, 3)
+print("")
+
+building_1.fire_alarm()
