@@ -1,4 +1,4 @@
-#Tehtävät 2 ja 3
+# Tehtävät 2 ja 3
 
 import random
 
@@ -7,7 +7,7 @@ class Lift:
     def __init__(self, lowest, highest):
         self.lowest = lowest
         self.highest = highest
-        self.current = 0
+        self.current = 1
         self.target = 0
 
     def move_up(self):
@@ -36,6 +36,7 @@ class Lift:
         print(f"Ylin kerros on {self.highest}.")
         print(f"Hissin nykyinen kerros on {self.current}.\n")
 
+
 class Building:
     def __init__(self, lowest, highest, amount_lifts):
         self.lowest = lowest
@@ -47,13 +48,19 @@ class Building:
             self.lifts.append(list_lift)
 
     def move_lift(self, index, floor):
-        the_lift = self.lifts[index-1]
+        the_lift = self.lifts[index - 1]
+        print(f"Hissi {index}:")
         the_lift.move_to_floor(floor)
 
-
-    def fire_alarm(self):
+    def fire_alarm_1(self):
         for i in range(len(self.lifts)):
-            building_1.move_lift(i+1, 0)
+            print(f"\n!! PALOHÄLYTYS !!")
+            building_1.move_lift(i+1, 1)
+
+    def fire_alarm_2(self):
+        for i in range(len(self.lifts)):
+            print(f"\n!! PALOHÄLYTYS !!")
+            building_2.move_lift(i+1, 1)
 
 
 Elevator = Lift(1, 10)
@@ -65,11 +72,15 @@ Elevator.move_to_floor(1)
 Elevator.print_info()
 
 building_1 = Building(1, 7, 2)
-building_2 = Building(0, 4, 1)
+building_2 = Building(1, 6, 1)
+building = building_1, building_2
 
-building_1.move_lift(2, 7)
+building_1.move_lift(1, 7)
 print("")
-building_1.move_lift(1, 3)
+building_1.move_lift(2, 3)
+print("")
+building_2.move_lift(1, 4)
 print("")
 
-building_1.fire_alarm()
+building_1.fire_alarm_1()
+building_2.fire_alarm_2()
