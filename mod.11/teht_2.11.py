@@ -16,13 +16,14 @@ class Car:
         self.travelled = 0
 
     def print_info(self):
-        print(f'Top speed: {self.top_speed} km/h, '
-              f'travelled {self.travelled} km.')
+        print(f'Car [{self.plate}]: \n- Top speed: {self.top_speed} km/h'
+              f', travelled: {self.travelled} km.')
 
     def travel(self, time, speed):
         distance = self.travelled + (speed * time)
         self.travelled = distance
-        print(f'{self.plate}, current speed: {speed} km/h')
+        self.print_info()
+        print(f'- Current speed: {speed} km/h')
 
 
 class Electric(Car):
@@ -32,8 +33,7 @@ class Electric(Car):
 
     def travel(self, time, speed):
         super().travel(time, speed)
-        super().print_info()
-        print(f'Max. battery: {self.battery} kWh.\n')
+        print(f'- Max. battery: {self.battery} kWh.\n')
 
 
 class Gas(Car):
@@ -43,8 +43,7 @@ class Gas(Car):
 
     def travel(self, time, speed):
         super().travel(time, speed)
-        super().print_info()
-        print(f'Max. gasoline: {self.gasoline_l} l.\n')
+        print(f'- Max. gasoline: {self.gasoline_l} l.\n')
 
 
 car = []
@@ -52,4 +51,10 @@ car.append(Electric('ABC-15', 180, 52.5))
 car.append(Gas('ACD-123', 165, 32.3))
 
 for c in car:
-    c.travel(3, random.randint(50, 100))
+    if Electric:
+        c.travel(3, random.randint(20, 180))
+    elif Gas:
+        c.travel(3, random.randint(20, 165))
+    else:
+        print('Mallia ei löydy.')
+
