@@ -18,12 +18,12 @@ url = "https://api.openweathermap.org/geo/1.0/direct?q=" \
 response = requests.get(url)
 r2 = response.json()
 print(f"{r2['lat']['lon']}")
-API = '38235476ebbabe664db40d4f8b5f076f'
+# API = '38235476ebbabe664db40d4f8b5f076f'
 lat = r2['lat']
 lon = r2['lon']
 
 url_2 = (f"https://api.openweathermap.org/data/2.5/weather?lat={lat}"
-            f"&lon={lon}&appid={API}&units=metric")
+         f"&lon={lon}&appid={API}&units=metric")
 
 try:
     answer = requests.get(url_2)
@@ -32,4 +32,3 @@ try:
         print(json_answer[0]['weather.description']['main.temp'])
 except requests.exceptions.RequestException as e:
     print('Hakua ei voitu suorittaa')
-
