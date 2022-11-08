@@ -13,7 +13,7 @@ import requests
 
 user_location = input("Input location: ")
 API = '38235476ebbabe664db40d4f8b5f076f'
-url = f"https://api.openweathermap.org/geo/2.5/direct?q={user_location}&appid=38235476ebbabe664db40d4f8b5f076f"
+url = f"https://api.openweathermap.org/geo/2.5/direct?q={user_location}&appid=38235476ebbabe664db40d4f8b5f076f&units=metric"
 answer = requests.get(url)
 print(f"{answer.status_code}")
 
