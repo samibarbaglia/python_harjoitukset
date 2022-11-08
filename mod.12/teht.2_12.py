@@ -13,13 +13,22 @@ import requests
 
 user_location = input("Input location: ")
 API = '38235476ebbabe664db40d4f8b5f076f'
-url = f"https://api.openweathermap.org/geo/2.5/direct?q={user_location}&appid=38235476ebbabe664db40d4f8b5f076f&units=metric"
-answer = requests.get(url)
-print(f"{answer.status_code}")
+url = f"https://api.openweathermap.org/data/2.5/weather?&appid=" \
+      f"{API}&q={user_location}&units=metric&lang=fi"
+print(url)
+response = requests.get(url)
+# print(f"{response.status_code}")
 
 try:
-    if answer.status_code == 200:
-        json_answer = answer.json()
-        print(json_answer[0]['weather.description']['main.temp'])
+    if response.status_code == 200:
+        json_response = response.json()
+        temp = json_response['main']['temp']
+        description = json_response['weather'][0]['description']
+        country = json_response['sys']['country']
+        print(f"\n{user_location}, {country}:\n"
+              f"- Lämpötila: {temp:0.2f} celcius\n"
+              f"- Sää: {description}")
+    elif response.status_code == 404:
+        print(f"Hakua ei voitu suorittaa [ERROR {response.status_code}]")
 except requests.exceptions.RequestException as e:
-    print('Hakua ei voitu suorittaa')
+    print(f'Hakua ei voitu suorittaa [ERROR {e}]')
