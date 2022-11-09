@@ -27,9 +27,9 @@ class Magazine(Publication):
 
 class Book(Publication):
     def __init__(self, name, author, page_count):
+        super().__init__(name)
         self.author = author
         self.page_count = page_count
-        super().__init__(name)
 
     def print_info(self):
         super().print_info()

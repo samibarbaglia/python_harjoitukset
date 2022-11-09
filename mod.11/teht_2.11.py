@@ -10,51 +10,49 @@ import random
 
 
 class Car:
-    def __init__(self, plate, top_speed):
+    def __init__(self, plate, top_speed, speed):
         self.plate = plate
         self.top_speed = top_speed
         self.travelled = 0
+        self.speed = speed
 
     def print_info(self):
-        print(f'Car [{self.plate}]: \n- Top speed: {self.top_speed} km/h'
-              f', travelled: {self.travelled} km.')
+        print(f'Car [{self.plate}]: '
+              f'\n- Top speed: {self.top_speed} km/h, travelled: {self.travelled} km.'
+              f'\n- Current speed: {self.speed} km/h')
 
-    def travel(self, time, speed):
-        distance = self.travelled + (speed * time)
+    def travel(self, hour):
+        distance = self.travelled + (self.speed * hour)
         self.travelled = distance
         self.print_info()
-        print(f'- Current speed: {speed} km/h')
 
 
 class Electric(Car):
-    def __init__(self, plate, top_speed, battery):
+    def __init__(self, plate, top_speed, speed, battery):
         self.battery = battery
-        super().__init__(plate, top_speed)
+        super().__init__(plate, top_speed, speed)
 
-    def travel(self, time, speed):
-        super().travel(time, speed)
+    def travel(self, hour):
+        super().travel(hour)
         print(f'- Max. battery: {self.battery} kWh.\n')
 
 
 class Gas(Car):
-    def __init__(self, plate, top_speed, gasoline_l):
+    def __init__(self, plate, top_speed, speed, gasoline_l):
         self.gasoline_l = gasoline_l
-        super().__init__(plate, top_speed)
+        super().__init__(plate, top_speed, speed)
 
-    def travel(self, time, speed):
-        super().travel(time, speed)
-        print(f'- Max. gasoline: {self.gasoline_l} l.\n')
+    def travel(self, hour):
+        gas_per_l = 10 #1l pyörittää 10km
+        gas_used = (self.speed / gas_per_l) * hour
+        gas_left= self.gasoline_l - gas_used
+        super().travel(hour)
+        print(f'- Max. gasoline: {self.gasoline_l} l, USED: {gas_used:0.2f} l, LEFT: {gas_left:0.2f} l')
 
 
 car = []
-car.append(Electric('ABC-15', 180, 52.5))
-car.append(Gas('ACD-123', 165, 32.3))
+car.append(Electric('ABC-15', 180, random.randint(20, 180), 52.5))
+car.append(Gas('ACD-123', 165, random.randint(20, 165), 32.3))
 
 for c in car:
-    if Electric:
-        c.travel(3, random.randint(20, 180))
-    elif Gas:
-        c.travel(3, random.randint(20, 165))
-    else:
-        print('Mallia ei löydy.')
-
+    c.travel(3)

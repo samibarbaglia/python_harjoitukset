@@ -5,10 +5,6 @@
 # tarpeen, jotta saat rajapintapyynnöissä tarvittavan API-avaimen (API key).
 # Selvitä myös, miten saat Kelvin-asteet muunnettua Celsius-asteiksi.
 
-import json
-
-# SB KOMMENTTI: en saanut API-avainta toimimaan, tein niin paljon kuin pystyin ilman
-
 import requests
 
 user_location = input("Input location: ")
