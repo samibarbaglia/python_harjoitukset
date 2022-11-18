@@ -4,14 +4,12 @@ import flask
 
 app = flask.Flask(__name__)
 
-@app.route('/alkuluku/')
-def alkuluku():
-    args = flask.request.args
-    number = int(args.get(""))
-    tulos = test_prime(number)
+@app.route('/alkuluku/<int:luku>')
+def alkuluku(luku):
+    tulos = test_prime(luku)
 
     vastaus = {
-        "Number": number,
+        "Number": luku,
         "isPrime": tulos
     }
 
@@ -20,20 +18,12 @@ def alkuluku():
 
 
 def test_prime(luku):
-    not_prime = False
     if luku > 1:
         for i in range(2, luku):
             if (luku % i) == 0:
-                not_prime = True
-                break
-
-            if not_prime:
-                print(f"{luku} ei ole alkuluku.")
-
+                return False
             else:
-                print(f"{luku} on alkuluku.")
-
-        return not not_prime
+                return True
 
 if __name__ == '__main__':
-    app.run(use_reloader=True, host='127.0.0.1', port=5000)
+    app.run(use_reloader=True, host='127.0.0.1', port=3000)
