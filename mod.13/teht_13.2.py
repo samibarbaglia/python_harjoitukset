@@ -27,15 +27,15 @@ def port(code):
         status = 200
         answer = {
             "ICAO": code,
-            "Name": airport,
-            "City": city
+            "NAME": airport,
+            "CITY": city
         }
 
     except ValueError:
         status = 400
         answer = {
             "status": status,
-            "teksti": "ERROR: Wrong input"
+            "teksti": "ERROR: Input"
         }
 
     json_answer = json.dumps(answer)
@@ -46,7 +46,7 @@ def port(code):
 def page_not_found(error_status):
     answer = {
         "status": "404",
-        "teksti": "ERROR: (Virheellinen pääte)"
+        "teksti": "ERROR: Search (is port or por?)"
     }
     json_answer = json.dumps(answer)
     return Response(response=json_answer, status=404, mimetype="application/json")
