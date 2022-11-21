@@ -22,7 +22,7 @@ class Car:
             self.current_speed = self.current_speed + speed_change
         elif self.current_speed + speed_change <= 0:
             self.current_speed = 0
-        elif self.current_speed + speed_change > 0:
+        elif self.current_speed + speed_change > self.top_speed:
             self.current_speed = self.top_speed
 
     def travel(self, aika):
