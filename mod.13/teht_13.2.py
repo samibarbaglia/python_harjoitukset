@@ -43,7 +43,7 @@ def port(code):
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(error_status):
     answer = {
         "status": "404",
         "teksti": "ERROR: Wrong end"

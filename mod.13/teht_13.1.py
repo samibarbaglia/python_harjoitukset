@@ -13,18 +13,18 @@ def prime(num):
         "isPrime": result
     }
 
-    json_data = json.dumps(answer, default=lambda o: o.__dict__, indent=4)
+    json_data = json.dumps(answer)
     return json_data
 
 
 def test(num):
-    if num > 1:
+    if num > 2:
         for i in range(2, num):
             if (num % i) == 0:
                 return False
             else:
                 return True
-    elif num == 1:
+    else:
         return True
 
 
