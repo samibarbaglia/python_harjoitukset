@@ -46,7 +46,7 @@ def port(code):
 def page_not_found(error_status):
     answer = {
         "status": "404",
-        "teksti": "ERROR: Wrong end"
+        "teksti": "ERROR: (Virheellinen pääte)"
     }
     json_answer = json.dumps(answer)
     return Response(response=json_answer, status=404, mimetype="application/json")
